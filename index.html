@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changing Site</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body id="main_page">
+
+    <div class="container">
+        <h1 id="welcomeText" onmouseover="showText();">Welcome to ThemeX</h1>
+        <div class="themes">
+            <h2>You can change between Themes From Here</h2>
+        </div>
+
+            <div class="select-box">
+                <div class="selected"></div>
+                <div class="options-container">
+                    
+                    <div class="option">
+                        <input type="radio" class="radio" id="ocean" name="category" value="ocean" onclick="changeBackground(this.value);">
+                        <label for="ocean">Ocean</label>
+                    </div>
+                
+                    <div class="option">
+                        <input type="radio" class="radio" id="cloud" name="category" value="cloud" onclick="changeBackground(this.value);">
+                        <label for="cloud">Cloud</label>
+                    </div>
+                
+                    <div class="option">
+                        <input type="radio" class="radio" id="garden" name="category" value="garden" onclick="changeBackground(this.value);">
+                           <label for="garden">Garden</label>
+                    </div>
+                
+                </div>
+            </div>
+        
+        </div>
+    
+    <div class="popup">
+        <label for="pop-text">
+            
+        </label>
+    </div>
+        
+    </div>
+    
+</body>
+</html>
