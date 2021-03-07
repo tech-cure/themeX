@@ -35,18 +35,21 @@ h2 {
     color: white;
 }
 
+
 .select-box {
-    display: block;
+    display: flex;
     width: 350px;
-    padding: 10px;
+    padding: 20px;
     position: relative;
     margin: 0 auto;
+    flex-direction: column;
 }
 
-.select-box .options-container {
-    background-color:rgba(255, 255, 255, 0.479);
+
+.select-box .options-container{
+    background-color:#000000b7;
     filter: blur(100%);
-    color: black;
+    color: white;
     width: 100%;
     transition: all 0.4s;
     border-radius: 8px;
@@ -55,7 +58,48 @@ h2 {
     font-size: 20px;
     font-weight: bold;
     font-variant: small-caps;
+    height: 0;
+    opacity: 0;
+    order: 1;
+    transition: all 0.4s;
 }
+
+.select-box .options-container.active {
+    opacity: 1;
+    height: 144px;
+
+    /* For Scroll Bar */
+    /* overflow-y: scroll; */
+}
+
+
+.selected {
+    background: #292727b7;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+  
+    order: 0;
+}
+
+.selected::after {
+    content: "";
+    background: url("../img/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+  
+    transition: all 0.4s;
+  }
+
 
 .select-box .option,
 .selected {
@@ -63,12 +107,13 @@ h2 {
     cursor: pointer;
 }
 
+
+
 .select-box label{
     cursor: pointer;
 }
-
 .select-box .option:hover {
-    background-color: rgba(255, 255, 255, 0.452);
+    background-color: rgba(0, 0, 0, 0.452);
     filter: invert(100%);
     
 }
@@ -78,3 +123,22 @@ h2 {
 }
 
 
+.select-box .options-container.active + .selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+}
+
+/* For Scroll Bar */
+
+/* 
+.select-box .options-container::-webkit-scrollbar {
+    width: 8px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+}
+  
+.select-box .options-container::-webkit-scrollbar-thumb {
+    background: #525861;
+    border-radius: 0 8px 8px 0;
+}
+   */
